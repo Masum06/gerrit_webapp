@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- https://stackoverflow.com/questions/30190588/html-select-multiple-as-dropdown -->
+<html>
+<head>
+	<title>Select</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+	<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
+	<style type="text/css">
+		body{
+			margin: 30px;
+		}
+		h3{
+			text-align: center;
+		}
+		.selection {
+			width: 50%; !important
+			margin-left: 25%; !important
+		}
+		.text {
+/*			width: 23%%;
+			margin-left: 1%;*/
+			/*background-color: red;*/
+			padding: 10px;
+			border-radius: 10px;
+			border: 1px solid #AAA;
+			overflow-y: scroll;
+		}
+		.code {
+/*			width: 23%;
+			*/
+			/*background-color: red;*/
+			padding: 10px;
+			border-radius: 10px;
+			border: 1px solid #AAA;
+			overflow-y: scroll;
+			height: 300px;
+		}
+		.panel{
+			margin-left: 25%;
+			width: 50%;
+		}
+		form {
+			width: 50%;
+			margin-left: 25%;
+		}
+		div {
+			margin: 10px;
+		}
+		.btn{
+			border-radius: 25px;
+			margin-top: 20px;
+		}
+		.btn1{
+			  position: absolute;
+			  left: 50%;
+			  margin-left: -50px;
+		}
+		.btn2{
+			  position: absolute;
+			  left: 45%;
+			  margin-left: -50px;
+		}
+		.btn3{
+			  position: absolute;
+			  left: 58%;
+			  margin-left: -50px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h3>Select One or more classes for this code review.</h3>
+	<br>
+<div class="panel">
+	<div class="code col-sm-6">
+	  "headers": {
+	    "Accept": "text/html,application/xhtml+xml, application/xml;q=0.9,image/webp,image/apng, */*;q=0.8", 
+	    "Accept-Encoding": "gzip, deflate", 
+	    "Accept-Language": "en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7", 
+	    "Cache-Control": "max-age=0", 
+	    "Connection": "close", 
+	    "Content-Length": "93", 
+	    "Content-Type": "application/x-www-form-urlencoded", 
+	    "Dnt": "1", 
+	    "Host": "httpbin.org", 
+	    "Origin": "null", 
+	    "Upgrade-Insecure-Requests": "1", 
+	    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+	  }, 
+	  "json": null, 
+	  "origin": "45.251.231.204", 
+	  "url": "http://httpbin.org/post"
+	}
+	</div>
+<div class="text col-sm-5">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+</div>
+
+<div class="selecttion">
+	<form action="http://httpbin.org/post" method="post">
+	  <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="test">
+	    <option value=""></option>
+	    <option>Documentation</option>
+	    <option>Visual representation</option>
+	    <option>Organization of the code</option>
+	    <option>Solution approach</option>
+	    <option>Resource</option>
+	    <option>Validation</option>
+	    <option>Logical</option>
+	    <option>Timing</option>
+	    <option>False positive</option>
+	    <option>Support</option>
+	    <option>Larger defect</option>
+	    <option>Interface</option>
+	    <option>Questions</option>
+	    <option>Interface</option>
+	    <option>Praise</option>
+	    <option>Alternate output</option>
+	    <option>Design discussion</option>
+	    <option>Other</option>
+	  </select>
+	  <br>
+	  <input type="submit" class="btn btn1 btn-info">
+	  <input type="submit" value="<" class="btn btn2 btn-info">
+	  <input type="submit" value=">" class="btn btn3 btn-info">
+	</form>
+</div>
+
+</body>
+
+<script type="text/javascript">
+  $(".chosen-select").chosen({
+    disable_search_threshold: 10,
+    no_results_text: "Oops, nothing found!",
+    width: "95%"
+  });
+</script>
+</html>
